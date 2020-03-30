@@ -172,14 +172,14 @@ function instToHex() {
         var o, targetTemp="";
         for (o = 0; o < target.length; o += 1) {    
             if (hexTable.hasOwnProperty(target[o]) == false) {
-                targetTemp = false;
+                targetTemp = "invalid";
                 break;
             } 
             else {
                 targetTemp = targetTemp + hexTable[target[o]];
             }
         }
-        if (targetTemp == false){
+        if (targetTemp == "invalid"){
             document.getElementById("output").innerHTML = "Error, check that target is valid hex";
             return;
         } else {
