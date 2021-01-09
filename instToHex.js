@@ -132,6 +132,18 @@ function instToHex() {
         return;
     }
 
+    shamt_c = parseInt(shamt, 16).toString(2);
+
+    if (shamt_c.length > 5) {
+        document.getElementById("outInst").innerHTML = "Invalid shift amount";
+        return;
+    }
+    
+    while (shamt_c.length < 5)
+    {
+        shamt_c = "0" + shamt_c;
+    }
+
     if (format == iFormat) {
         imm = imm.toUpperCase();
         if (!imm.includes("0X")) {
